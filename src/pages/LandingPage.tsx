@@ -10,7 +10,6 @@ import { useSettingsStore } from '@/store/useSettingsStore'
 import { staggerContainer, staggerChild, slideUpFade, fadeIn } from '@/utils/motion'
 import Button from '@/components/common/Button/Button'
 import Card from '@/components/common/Card/Card'
-import motivationVideo from '@/assets/motivation.mp4'
 
 // ─── Feature pill ─────────────────────────────────────────────
 const FeaturePill = ({ icon: Icon, label }: { icon: typeof Code2; label: string }) => (
@@ -274,41 +273,7 @@ export default function LandingPage() {
             </div>
           </motion.div>
         </div>
-
-        {/* ── Motivation Video Section ── */}
-        <motion.div
-          variants={slideUpFade}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-32 relative flex flex-col items-center text-center"
-        >
-          {/* Background glow for video */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary-500/10 blur-[100px] pointer-events-none" />
-          
-          <div className="relative w-full max-w-4xl rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(99,102,241,0.15)] bg-black/40 ring-1 ring-white/5">
-            <video
-              src={motivationVideo}
-              className="w-full h-auto aspect-video object-cover"
-              controls
-              playsInline
-              poster="/poster.jpg"
-            />
-          </div>
-          
-          <div className="mt-10 space-y-4 max-w-3xl relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-cyan-400">
-                {language === 'bn' ? 'কেন কোডিং শিখবেন?' : 'Why Learn to Code?'}
-              </span>
-            </h2>
-            <p className="text-lg md:text-xl text-white/70 leading-relaxed font-medium">
-              {language === 'bn'
-                ? 'লজিক এবং সিদ্ধান্ত নেওয়ার ক্ষমতা আপনার ক্যারিয়ারকে বদলে দিতে পারে। একটি ছোট "if-else" ব্লক থেকে শুরু হতে পারে আপনার পরবর্তী বড় উদ্ভাবন। আজই শুরু করুন!'
-                : 'Logic and decision-making can transform your career. Your next big innovation could start with a simple "if-else" block. Start building your future today!'}
-            </p>
-          </div>
-        </motion.div>
+        {/* Removed Motivation Video Section */}
       </div>
     </div>
   )
