@@ -1,5 +1,26 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
 .env
 .env.local
 .env.production
-dist
+.env.*.local
+
+# Editor & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+.DS_Store
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Generated config outputs
+vite.config.js
+vite.config.d.ts
