@@ -5,7 +5,7 @@ const genAI = new GoogleGenerativeAI(apiKey);
 
 // Natural Gemini 3.5 Flash — no system overrides
 export const model = genAI.getGenerativeModel({
-  model: 'gemini-3.5-flash',
+  model: 'gemini-3.1-flash-lite',
 });
 
 export async function* sendMessageStreamToGemini(
