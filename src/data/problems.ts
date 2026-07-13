@@ -300,7 +300,7 @@ export const PROBLEM_GROUPS: ProblemGroup[] = [
         difficulty: 'hard',
         desc: 'Free allowance: 20kg. 20.1–30kg → $50 flat. Over 30kg → $50 + $10 per extra kg above 30.',
         hint: 'Calculate excess kg above 30 separately.',
-        code: `weight = float(input("Baggage weight (kg): "))\nif weight <= 20:\n    print("No extra charge.")\nelif weight <= 30:\n    print("Extra charge: $50")\nelse:\n    extra = weight - 30\n    charge = 50 + extra * 10\n    print(f"Extra charge: ${charge:.0f}")`,
+        code: `weight = float(input("Baggage weight (kg): "))\nif weight <= 20:\n    print("No extra charge.")\nelif weight <= 30:\n    print("Extra charge: $50")\nelse:\n    extra = weight - 30\n    charge = 50 + extra * 10\n    print(f"Extra charge: \${charge:.0f}")`,
         output: 'Baggage weight (kg): 35\nExtra charge: $100',
       },
       {
@@ -327,7 +327,7 @@ export const PROBLEM_GROUPS: ProblemGroup[] = [
         difficulty: 'hard',
         desc: '$5 for first 2 hours. $2 per additional hour. Max daily cap: $20.',
         hint: 'Calculate extra hours beyond 2. Then apply the cap.',
-        code: `hours = int(input("Hours parked: "))\nif hours <= 2:\n    fee = 5\nelse:\n    fee = 5 + (hours - 2) * 2\nif fee > 20:\n    fee = 20\nprint(f"Total fee: ${fee}")`,
+        code: `hours = int(input("Hours parked: "))\nif hours <= 2:\n    fee = 5\nelse:\n    fee = 5 + (hours - 2) * 2\nif fee > 20:\n    fee = 20\nprint(f"Total fee: \${fee}")`,
         output: 'Hours parked: 10\nTotal fee: $20',
       },
       {
@@ -345,7 +345,7 @@ export const PROBLEM_GROUPS: ProblemGroup[] = [
         difficulty: 'hard',
         desc: "Water=$1, Soda=$1.50, Juice=$2. If cash is exact → dispense. If more → dispense + change. If less → 'Insufficient funds'.",
         hint: 'Store item prices in a dict, then compare cash to price.',
-        code: `prices = {"Water": 1.0, "Soda": 1.5, "Juice": 2.0}\nitem = input("Select item (Water/Soda/Juice): ")\ncash = float(input("Insert cash ($): "))\nif item not in prices:\n    print("Invalid selection.")\nelse:\n    price = prices[item]\n    if cash == price:\n        print("Dispensing item.")\n    elif cash > price:\n        change = cash - price\n        print(f"Dispensing item. Change: ${change:.2f}")\n    else:\n        needed = price - cash\n        print(f"Insufficient funds. Please insert ${needed:.2f} more.")`,
+        code: `prices = {"Water": 1.0, "Soda": 1.5, "Juice": 2.0}\nitem = input("Select item (Water/Soda/Juice): ")\ncash = float(input("Insert cash ($): "))\nif item not in prices:\n    print("Invalid selection.")\nelse:\n    price = prices[item]\n    if cash == price:\n        print("Dispensing item.")\n    elif cash > price:\n        change = cash - price\n        print(f"Dispensing item. Change: \${change:.2f}")\n    else:\n        needed = price - cash\n        print(f"Insufficient funds. Please insert \${needed:.2f} more.")`,
         output: 'Select item (Water/Soda/Juice): Juice\nInsert cash ($): 3\nDispensing item. Change: $1.00',
       },
     ],
